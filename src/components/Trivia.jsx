@@ -7,11 +7,13 @@ class Trivia extends React.Component {
       current: this.props.current,
       category: '',
       value: '',
+      dropdown: '',
     };
 
     this.updateQ = this.updateQ.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDropdownChange = this.handleDropdownChange.bind(this);
   }
 
   componentDidMount() {
@@ -31,6 +33,7 @@ class Trivia extends React.Component {
       current: newQ,
       category: newQ.category.title,
       value: '',
+      dropdown: '',
     });
   }
 
@@ -40,12 +43,19 @@ class Trivia extends React.Component {
     })
   }
 
+  handleDropdownChange(e) {
+    console.log(e.target.value);
+    this.setState({
+      dropdown: e.target.value,
+    })
+  }
+
   handleSubmit(e) {
     event.preventDefault();
-    if (this.isValid) {
+    if (this.isValid(this.state.value)) {
       this.props.getRandomQ();
     } else {
-      // RENDER ENDING PAGE!!!
+      this.props.changeView('end');
     }
   }
 
@@ -59,7 +69,7 @@ class Trivia extends React.Component {
         <h2>Q: {this.state.current.question}</h2>
         <h4>Category: {this.state.category}</h4>
         {/* TODO: take into consideration person/object selections in answer*/}
-        <select>
+        <select value={this.state.dropdown} onChange={this.handleDropdownChange}>
           <option default>Change me!</option>
           <option value="object">What is</option>
           <option value="person">Who is</option>

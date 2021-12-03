@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Trivia from './Trivia.jsx';
+import EndView from './EndView.jsx';
 
 class App extends React.Component {
   constructor() {
@@ -12,6 +13,7 @@ class App extends React.Component {
     };
 
     this.getRandomQ = this.getRandomQ.bind(this);
+    this.changeView = this.changeView.bind(this);
   }
 
   componentDidMount() {
@@ -41,12 +43,24 @@ class App extends React.Component {
       });
   }
 
+  changeView(newView) {
+    this.setState({
+      view: newView,
+    })
+  }
+
   render() {
+    if (this.state.view === 'end') {
+      return (
+        <EndView changeView={this.changeView}/>
+      );
+    }
     return (
       <div id="main">
         <Trivia
           current={this.state.current}
           getRandomQ={this.getRandomQ}
+          changeView={this.changeView}
         />
       </div>
     );
