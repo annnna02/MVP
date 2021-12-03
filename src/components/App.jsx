@@ -8,7 +8,7 @@ class App extends React.Component {
     super();
     this.state = {
       current: {},
-      collection: [],
+      rundown: [],
       view: 'welcome',
     };
 
@@ -26,8 +26,8 @@ class App extends React.Component {
         console.log(q.data[0]);
         this.setState({
           current: q.data[0],
-          collection: [
-            ...this.state.collection,
+          rundown: [
+            ...this.state.rundown,
             {
               question: q.data[0].question,
               answer: q.data[0].answer,
@@ -52,7 +52,10 @@ class App extends React.Component {
   render() {
     if (this.state.view === 'end') {
       return (
-        <EndView changeView={this.changeView}/>
+        <EndView
+          changeView={this.changeView}
+          rundown={this.state.rundown}
+        />
       );
     }
     return (
