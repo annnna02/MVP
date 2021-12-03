@@ -30,6 +30,7 @@ class Trivia extends React.Component {
     this.setState({
       current: newQ,
       category: newQ.category.title,
+      value: '',
     });
   }
 
@@ -41,7 +42,15 @@ class Trivia extends React.Component {
 
   handleSubmit(e) {
     event.preventDefault();
-    alert(`Submitted ${this.state.value}`);
+    if (this.isValid) {
+      this.props.getRandomQ();
+    } else {
+      // RENDER ENDING PAGE!!!
+    }
+  }
+
+  isValid(answer) {
+    return answer.toLowerCase() === this.state.current.answer.toLowerCase();
   }
 
   render() {

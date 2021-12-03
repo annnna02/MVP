@@ -7,7 +7,7 @@ class App extends React.Component {
     super();
     this.state = {
       current: {},
-      collection: {},
+      collection: [],
       view: 'welcome',
     };
 
@@ -21,9 +21,19 @@ class App extends React.Component {
   getRandomQ() {
     axios.get('/api')
       .then(q => {
-        // console.log(q.data[0]);
+        console.log(q.data[0]);
         this.setState({
           current: q.data[0],
+          collection: [
+            ...this.state.collection,
+            {
+              question: q.data[0].question,
+              answer: q.data[0].answer,
+              airdate: q.data[0].airdate,
+              points: q.data[0].value,
+              category: q.data[0].category.title,
+            }
+          ],
         })
       })
       .catch(err => {
@@ -34,7 +44,10 @@ class App extends React.Component {
   render() {
     return (
       <div id="main">
-        <Trivia current={this.state.current}/>
+        <Trivia
+          current={this.state.current}
+          getRandomQ={this.getRandomQ}
+        />
       </div>
     );
   }
