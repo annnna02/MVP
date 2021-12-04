@@ -14,7 +14,6 @@ app.use(morgan('tiny'));
 app.get('/api', (req, res) => {
   axios.get('http://jservice.io/api/random')
     .then(response => {
-      // console.log(response.data);
       res.json(response.data);
     })
     .catch(err => {
@@ -23,6 +22,7 @@ app.get('/api', (req, res) => {
 })
 
 app.post('/users', (req, res) => {
+  console.log(req.body);
   addUser(req.body)
     .then(() => {
       res.send('Added!');

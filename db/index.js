@@ -9,7 +9,7 @@ const pool = new Pool({
 })
 
 var addUser = (params) => {
-  const text = 'INSERT INTO users (name, email, score) VALUES ($1, $2, $3)';
+  const text = 'INSERT INTO users(name, email, score) VALUES ($1, $2, $3)';
   const values = [
     params.name,
     params.email,
