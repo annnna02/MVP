@@ -9,7 +9,7 @@ class EndView extends React.Component {
       rundown: this.props.rundown,
       name: '',
       email: '',
-      score: 0,
+      score: this.props.score,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -53,7 +53,7 @@ class EndView extends React.Component {
             );
           })}
         </ol>
-        <div>Your grand total: {}</div>
+        <div>Your grand total: {this.state.score}</div>
 
         <form onSubmit={this.handleSubmit}>
           <h2>Enter your email to save your score!</h2>

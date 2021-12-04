@@ -10,10 +10,12 @@ class App extends React.Component {
       current: {},
       rundown: [],
       view: 'welcome',
+      score: 0,
     };
 
     this.getRandomQ = this.getRandomQ.bind(this);
     this.changeView = this.changeView.bind(this);
+    this.updateScore = this.updateScore.bind(this);
   }
 
   componentDidMount() {
@@ -49,12 +51,19 @@ class App extends React.Component {
     })
   }
 
+  updateScore(val) {
+    this.setState(prevState => {
+      return {score: prevState.score + val}
+    })
+  }
+
   render() {
     if (this.state.view === 'end') {
       return (
         <EndView
           changeView={this.changeView}
           rundown={this.state.rundown}
+          score={this.state.score}
         />
       );
     }
@@ -64,6 +73,7 @@ class App extends React.Component {
           current={this.state.current}
           getRandomQ={this.getRandomQ}
           changeView={this.changeView}
+          updateScore={this.updateScore}
         />
       </div>
     );

@@ -53,6 +53,7 @@ class Trivia extends React.Component {
   handleSubmit(e) {
     event.preventDefault();
     if (this.isValid(this.state.value)) {
+      this.props.updateScore(this.state.current.value);
       this.props.getRandomQ();
     } else {
       this.props.changeView('end');
