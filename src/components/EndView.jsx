@@ -40,30 +40,36 @@ class EndView extends React.Component {
 
   render() {
     return (
-      <div className="ending-page">
-        <ol className="rundown-list">
-          {this.state.rundown.map(entry => {
-            return (
-              <li>
-                <h5>Category: {entry.category}</h5>
-                <h4>Q: {entry.question}</h4>
-                <h4>A: {entry.answer}</h4>
-                <div>${entry.points}</div>
-                <div>Originally aired {moment(entry.airdate).format('MMMM Do, YYYY')}</div>
-              </li>
-            );
-          })}
-        </ol>
-        <div>Your grand total: {this.state.score}</div>
+      <div style={{ backgroundColor: 'rgba(0,0,0, 0.4)' }} className="modal-bg">
+        <div className="ending-modal modal-blur">
+          <div className="rundown-list">
+            <h2>Your Results!</h2>
+            {this.state.rundown.map(entry => {
+              return (
+                <div className="result-tile">
+                  <div>Category: {entry.category.toUpperCase()}</div>
+                  <div>Q: {entry.question}</div>
+                  <div>A: {entry.answer}</div>
+                  <div>${entry.points}</div>
+                  <div>Originally aired {moment(entry.airdate).format('MMMM Do, YYYY')}</div>
+                  <br />
+                </div>
+              );
+            })}
+          </div>
+          <br />
+          <div className="grand-total">Your grand total: {this.state.score}</div>
 
-        <form onSubmit={this.handleSubmit}>
-          <h2>Enter your email to save your score!</h2>
-          <label>Name: </label>
-          <input type="text" id="name" onChange={this.handleChange}></input>
-          <label>Email: </label>
-          <input type="text" id="email" onChange={this.handleChange}></input>
-          <input type="submit" value="Submit"/>
-        </form>
+          <form onSubmit={this.handleSubmit}>
+            <h2>Enter your email to save your score!</h2>
+            <label>Name: </label>
+            <input type="text" id="name" onChange={this.handleChange}></input>
+            <label>   Email: </label>
+            <input type="text" id="email" onChange={this.handleChange}></input>
+            <br />
+            <input type="submit" value="Submit"/>
+          </form>
+        </div>
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Header from './Header.jsx';
 import Trivia from './Trivia.jsx';
 import EndView from './EndView.jsx';
 
@@ -58,23 +59,22 @@ class App extends React.Component {
   }
 
   render() {
-    if (this.state.view === 'end') {
-      return (
-        <EndView
-          changeView={this.changeView}
-          rundown={this.state.rundown}
-          score={this.state.score}
-        />
-      );
-    }
     return (
       <div id="main">
+        <Header />
         <Trivia
           current={this.state.current}
           getRandomQ={this.getRandomQ}
           changeView={this.changeView}
           updateScore={this.updateScore}
         />
+        {this.state.view === 'end'
+          ? <EndView
+            changeView={this.changeView}
+            rundown={this.state.rundown}
+            score={this.state.score}
+            />
+          : null}
       </div>
     );
   }

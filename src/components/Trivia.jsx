@@ -59,11 +59,15 @@ class Trivia extends React.Component {
       this.props.updateScore(this.state.current.value);
       this.props.getRandomQ();
     } else {
-      this.props.changeView('end');
+      // TODO: create buzz/shake animation for textbox when incorrect, THEN
+      setTimeout(() => this.props.changeView('end'), 300);
     }
   }
 
   isValid(answer) {
+    // if (!this.state.dropdown) {
+    //   this.props.changeView('end');
+    // }
     return answer.toLowerCase() === this.state.current.answer.toLowerCase();
   }
 
@@ -71,36 +75,37 @@ class Trivia extends React.Component {
     if (completed) {
       return <></>;
     } else {
-      return <span>0:{seconds}</span>;
+      return <span className="countdown">0:{seconds}</span>;
     }
   }
 
   render() {
     return (
-      <div id="trivia-main">
+      <>
         <Countdown
-          date={Date.now() + 5000}
+          date={Date.now() + 30000}
           renderer={this.renderer}
-          onComplete={() => this.props.changeView('end')}
+          // onComplete={() => this.props.changeView('end')}
         />
-
-        <h2>Q: {this.state.current.question}</h2>
-        <h4>Category: {this.state.category}</h4>
-        {/* TODO: take into consideration person/object selections in answer*/}
-        <select value={this.state.dropdown} onChange={this.handleDropdownChange}>
-          <option default>Change me!</option>
-          <option value="object">What is</option>
-          <option value="person">Who is</option>
-        </select>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
-          <input type="submit" value="Guess!"/>
-        </form>
-      </div>
+        <div className="trivia-main">
+          <h2 className="category">{this.state.category.toUpperCase()}</h2>
+          <h3>Q: {this.state.current.question}</h3>
+          {/* TODO: take into consideration person/object selections in answer*/}
+          <select className="dropdown" value={this.state.dropdown} onChange={this.handleDropdownChange}>
+            <option default>Change me!</option>
+            <option value="object">What is</option>
+            <option value="person">Who is</option>
+          </select>
+          <form className="answer-bar" onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              value={this.state.value}
+              onChange={this.handleChange}
+            />
+            <input type="submit" value="Guess!"/>
+          </form>
+        </div>
+      </>
     );
   }
 }

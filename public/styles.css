@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'gyparodyregular';
+  src: url('./fonts/gyparody.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'category-font';
+  src: url('./fonts/HelveticaInseratLTStd-Roman.ttf');
+}
+
+body {
+  font-family: 'garamond';
+  font-style: normal;
+  color: ghostwhite;
+}
+
+.logo {
+  font-family: 'gyparodyregular';
+  color: silver;
+}
+
+h1 {
+  font-family: "gyparodyregular";
+}
+
+.trivia-main {
+  background-color: rgb(28, 28, 211);
+  margin: auto;
+  padding: 50px;
+  transform: translate(0, 10vh);
+  border: solid black;
+  height: 40vh;
+  width: 40vw;
+  text-align: center;
+  justify-self: center;
+}
+
+.category {
+  font-family: 'category-font';
+  text-shadow: 2px 2px black;
+}
+
+.countdown {
+  position: absolute;
+  right: 3%;
+  top: 3%;
+  color: rgb(28, 28, 211);
+  font-size: 35px;
+  font-weight: bolder;
+}
+
+.answer-bar {
+  position: relative;
+  bottom: -27%;
+}
+
+.dropdown {
+  position: relative;
+  bottom: -24%;
+}
+
+.modal-bg {
+  width:100%;
+  height:100%;
+  top: 0%;
+  left: 0%;
+  position: fixed;
+  z-index:1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  animation: fadein .7s;
+}
+
+.modal-blur {
+  width: auto;
+  max-height: 100vh;
+  overflow: auto;
+}
+
+.ending-modal {
+  background-color: white;
+  color: black;
+  border: solid black;
+  border-style: ridge;
+  height: 70vh;
+  width: 60vw;
+  overflow-y: scroll;
+  margin: auto;
+  text-align: center;
+}
+
+.result-tile {
+  background-color: honeydew;
+  border: black solid;
+  border-style: inset;
+  padding: 6%;
+}
+
+.grand-total {
+  font-weight: bold;
+  font-size:large;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
