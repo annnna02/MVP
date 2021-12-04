@@ -1,4 +1,6 @@
 import React from 'react';
+import Countdown from 'react-countdown';
+import EndView from './EndView.jsx';
 
 class Trivia extends React.Component {
   constructor(props) {
@@ -14,6 +16,7 @@ class Trivia extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDropdownChange = this.handleDropdownChange.bind(this);
+    this.renderer = this.renderer.bind(this);
   }
 
   componentDidMount() {
@@ -64,9 +67,23 @@ class Trivia extends React.Component {
     return answer.toLowerCase() === this.state.current.answer.toLowerCase();
   }
 
+  renderer({seconds, completed}) {
+    if (completed) {
+      return <></>;
+    } else {
+      return <span>0:{seconds}</span>;
+    }
+  }
+
   render() {
     return (
       <div id="trivia-main">
+        <Countdown
+          date={Date.now() + 5000}
+          renderer={this.renderer}
+          onComplete={() => this.props.changeView('end')}
+        />
+
         <h2>Q: {this.state.current.question}</h2>
         <h4>Category: {this.state.category}</h4>
         {/* TODO: take into consideration person/object selections in answer*/}

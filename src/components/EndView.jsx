@@ -45,6 +45,7 @@ class EndView extends React.Component {
           {this.state.rundown.map(entry => {
             return (
               <li>
+                <h5>Category: {entry.category}</h5>
                 <h4>Q: {entry.question}</h4>
                 <h4>A: {entry.answer}</h4>
                 <div>${entry.points}</div>
