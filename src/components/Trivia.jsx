@@ -59,6 +59,13 @@ class Trivia extends React.Component {
     if (this.isValid(this.state.value)) {
       this.props.updateScore(this.state.current.value);
       this.props.getRandomQ();
+      anime({
+        targets: '.trivia-main',
+        scale: [{value: 1}, {value: 1.4}, {value: 1, delay: 250}],
+        rotateY: {value: '+=360', delay: 200},
+        easing: 'easeInOutSine',
+        duration: 550,
+      });
     } else {
       // TODO: create buzz/shake animation for textbox when incorrect, THEN
       const xMax = 16;
