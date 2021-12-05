@@ -1,6 +1,7 @@
 import React from 'react';
 import Countdown from 'react-countdown';
 import EndView from './EndView.jsx';
+import anime from 'animejs';
 
 class Trivia extends React.Component {
   constructor(props) {
@@ -60,7 +61,34 @@ class Trivia extends React.Component {
       this.props.getRandomQ();
     } else {
       // TODO: create buzz/shake animation for textbox when incorrect, THEN
-      setTimeout(() => this.props.changeView('end'), 300);
+      const xMax = 16;
+      const shake = anime({
+        targets: '.trivia-main',
+        easing: 'easeInOutSine',
+        duration: 375,
+        translateX: [
+          {
+            value: xMax * -1,
+          },
+          {
+            value: xMax,
+          },
+          {
+            value: xMax/-2,
+          },
+          {
+            value: xMax/2,
+          },
+          {
+            value: 0,
+          }
+        ],
+        autoplay: true,
+      });
+      const send = () => {
+        shake.restart();
+      };
+      setTimeout(() => this.props.changeView('end'), 700);
     }
   }
 
@@ -90,7 +118,6 @@ class Trivia extends React.Component {
         <div className="trivia-main">
           <h2 className="category">{this.state.category.toUpperCase()}</h2>
           <h3>Q: {this.state.current.question}</h3>
-          {/* TODO: take into consideration person/object selections in answer*/}
           <select className="dropdown" value={this.state.dropdown} onChange={this.handleDropdownChange}>
             <option default>Change me!</option>
             <option value="object">What is</option>
