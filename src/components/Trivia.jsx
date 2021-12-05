@@ -111,7 +111,7 @@ class Trivia extends React.Component {
   }
 
   renderer({seconds, completed}) {
-    if (completed) {
+    if (completed || this.props.view === 'end' || this.props.view === 'goodbye!') {
       return <></>;
     } else {
       const timesup = anime({

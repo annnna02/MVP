@@ -3,6 +3,7 @@ import axios from 'axios';
 import Header from './Header.jsx';
 import Trivia from './Trivia.jsx';
 import EndView from './EndView.jsx';
+import Bye from './Bye.jsx';
 
 class App extends React.Component {
   constructor() {
@@ -67,6 +68,7 @@ class App extends React.Component {
           getRandomQ={this.getRandomQ}
           changeView={this.changeView}
           updateScore={this.updateScore}
+          view={this.state.view}
         />
         {this.state.view === 'end'
           ? <EndView
@@ -75,6 +77,7 @@ class App extends React.Component {
             score={this.state.score}
             />
           : null}
+        {this.state.view === 'goodbye!' ? <Bye /> : null}
       </div>
     );
   }

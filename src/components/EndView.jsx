@@ -12,7 +12,6 @@ class EndView extends React.Component {
       email: '',
       score: this.props.score,
     };
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -40,6 +39,9 @@ class EndView extends React.Component {
         rotate: '5turn',
         duration: 1500,
       });
+    })
+    .then(() => {
+      setTimeout(() => this.props.changeView('goodbye!'), 1000);
     })
     .catch(err => {
       console.log(err);
@@ -78,7 +80,7 @@ class EndView extends React.Component {
             <label>   Email: </label>
             <input type="text" id="email" onChange={this.handleChange}></input>
             <br />
-            <input type="submit" value="Submit"/>
+            <input className="submit-form" type="submit" value="Submit"/>
           </form>
         </div>
       </div>

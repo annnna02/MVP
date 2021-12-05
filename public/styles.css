@@ -24,6 +24,12 @@ body {
   justify-content: center;
 }
 
+input {
+  font-family: 'clue-card-font';
+  font-size: medium;
+  font-weight: 700;
+}
+
 .logo {
   font-family: 'gyparodyregular';
   color: floralwhite;
@@ -123,7 +129,7 @@ h1 {
 }
 
 /* ---------------------------------------------------------
-                       ENDING PAGE!!!
+                       SCORE PAGE!!!
 -----------------------------------------------------------*/
 
 .modal-bg {
@@ -137,6 +143,11 @@ h1 {
   flex-direction: row;
   justify-content: center;
   animation: fadein .7s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .modal-blur {
@@ -154,11 +165,10 @@ h1 {
   width: 60vw;
   margin: auto;
   text-align: center;
-
 }
 
 .rundown-list {
-  border: solid slategray;
+  border: solid darkslateblue;
   border-style: double;
   position: relative;
   width: 80%;
@@ -170,23 +180,21 @@ h1 {
 
 .correct-tile {
   background-color: rgb(108, 238, 68);
-  border-top: dimgrey solid 0.5px;
-  /* border-style: ridge; */
+  border-top: black solid 0.5px;
   padding: 5%;
   text-align: left;
-  font-size: medium;
-  height: 30%;
+  font-size: 1.6vw;
+  height: 35%;
 }
 
 .incorrect-tile {
   background-color: crimson;
-  opacity: 0.9;
-  border-top: dimgrey solid 0.5px;
-  /* border-style: ridge; */
+  opacity: 0.8;
+  border-top: black solid 0.5px;
   padding: 5%;
   text-align: left;
-  font-size: medium;
-  height: 30%;
+  font-size: 1.6vw;
+  height: 35%;
 }
 
 .grand-total {
@@ -197,8 +205,42 @@ h1 {
   text-shadow: 1.5px 1.5px goldenrod;
 }
 
-@keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+
+.submit-form {
+  background-color: ghostwhite;
+  margin-top: .8%;
+}
+
+
+/* ---------------------------------------------------------
+                       GOODBYE PAGE!!!
+-----------------------------------------------------------*/
+
+.modal-bg-bye {
+  width:100%;
+  height:100%;
+  top: 0%;
+  left: 0%;
+  position: fixed;
+  z-index:1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.goodbye {
+  background-color: lightyellow;
+  color: black;
+  border: solid black;
+  border-style: ridge;
+  height: 37vh;
+  width: 50vw;
+  margin: auto;
+  text-align: center;
+  animation: fadein .6s;
+  font-size: 40px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 10%;
 }
 
