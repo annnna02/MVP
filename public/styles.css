@@ -167,6 +167,12 @@ h1 {
   text-align: center;
 }
 
+.results-title {
+  font-size: 35px;
+  margin-top: 2%;
+  margin-bottom: 0.5%;
+}
+
 .rundown-list {
   border: solid darkslateblue;
   border-style: double;
@@ -183,8 +189,7 @@ h1 {
   border-top: black solid 0.5px;
   padding: 5%;
   text-align: left;
-  font-size: 1.6vw;
-  height: 35%;
+  font-size: 1.3vw;
 }
 
 .incorrect-tile {
@@ -193,14 +198,20 @@ h1 {
   border-top: black solid 0.5px;
   padding: 5%;
   text-align: left;
-  font-size: 1.6vw;
-  height: 35%;
+  font-size: 1.3vw;
+}
+
+.ending-category {
+  font-weight: bold;
+  font-size: larger;
+  margin-bottom: 1%;
+  color: seashell;
 }
 
 .grand-total {
   background-color: darkslateblue;
   font-weight: bolder;
-  font-size: x-large;
+  font-size: xx-large;
   color: gold;
   text-shadow: 1.5px 1.5px goldenrod;
 }
