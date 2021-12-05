@@ -146,34 +146,55 @@ h1 {
 }
 
 .ending-modal {
-  background-color: white;
+  background-color: lightyellow;
   color: black;
   border: solid black;
   border-style: ridge;
-  height: 70vh;
+  height: 80vh;
   width: 60vw;
-  overflow-y: scroll;
   margin: auto;
   text-align: center;
+
+}
+
+.rundown-list {
+  border: solid slategray;
+  border-style: double;
+  position: relative;
+  width: 80%;
+  height: 60%;
+  justify-content: center;
+  margin: auto;
+  overflow-y: scroll;
 }
 
 .correct-tile {
-  background-color: honeydew;
-  border: black solid;
-  border-style: inset;
-  padding: 6%;
+  background-color: rgb(108, 238, 68);
+  border-top: dimgrey solid 0.5px;
+  /* border-style: ridge; */
+  padding: 5%;
+  text-align: left;
+  font-size: medium;
+  height: 30%;
 }
 
 .incorrect-tile {
   background-color: crimson;
-  border: black solid;
-  border-style: inset;
-  padding: 6%;
+  opacity: 0.9;
+  border-top: dimgrey solid 0.5px;
+  /* border-style: ridge; */
+  padding: 5%;
+  text-align: left;
+  font-size: medium;
+  height: 30%;
 }
 
 .grand-total {
-  font-weight: bold;
-  font-size:large;
+  background-color: darkslateblue;
+  font-weight: bolder;
+  font-size: x-large;
+  color: gold;
+  text-shadow: 1.5px 1.5px goldenrod;
 }
 
 @keyframes fadein {

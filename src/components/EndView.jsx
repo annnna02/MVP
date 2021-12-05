@@ -48,19 +48,19 @@ class EndView extends React.Component {
 
   render() {
     return (
-      <div style={{ backgroundColor: 'rgba(0,0,0, 0.4)' }} className="modal-bg">
+      <div style={{ backgroundColor: 'rgba(0,0,0, 0.45)' }} className="modal-bg">
         <div className="ending-modal modal-blur">
+          <h2>Your Results!</h2>
           <div className="rundown-list">
-            <h2>Your Results!</h2>
             {this.state.rundown.map((entry, i) => {
               return (
                 <div className={
                   i + 1 === this.state.rundown.length
                   ? "incorrect-tile"
                   : "correct-tile"}>
-                  <div>Category: {entry.category.toUpperCase()}</div>
-                  <div>Q: {entry.question}</div>
-                  <div>A: {entry.answer}</div>
+                  <div><b>Category:</b> {entry.category.toUpperCase()}</div>
+                  <div><b>Q:</b> {entry.question}</div>
+                  <div><b>A:</b> {entry.answer}</div>
                   <div>${entry.points}</div>
                   <div>Originally aired {moment(entry.airdate).format('MMMM Do, YYYY')}</div>
                   <br />
@@ -69,10 +69,10 @@ class EndView extends React.Component {
             })}
           </div>
           <br />
-          <div className="grand-total">Your grand total: {this.state.score}</div>
+          <div className="grand-total">Your grand total: ${this.state.score}</div>
 
           <form onSubmit={this.handleSubmit}>
-            <h2>Enter your email to save your score!</h2>
+            <h3><i>Enter your email to save your score!</i></h3>
             <label>Name: </label>
             <input type="text" id="name" onChange={this.handleChange}></input>
             <label>   Email: </label>

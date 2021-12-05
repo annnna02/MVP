@@ -102,7 +102,12 @@ class Trivia extends React.Component {
     // if (!this.state.dropdown) {
     //   this.props.changeView('end');
     // }
-    return answer.toLowerCase() === this.state.current.answer.toLowerCase();
+    // return answer.toLowerCase() === this.state.current.answer.toLowerCase();
+    if (answer === '') {
+      return false;
+    }
+    var actual = this.state.current.answer.toLowerCase();
+    return actual.includes(answer.toLowerCase());
   }
 
   renderer({seconds, completed}) {
