@@ -21,16 +21,19 @@ body {
   font-style: normal;
   color: ghostwhite;
   background-color: wheat;
+  justify-content: center;
 }
 
 .logo {
   font-family: 'gyparodyregular';
-  color: silver;
-  font-size: 100px;
+  color: floralwhite;
+  font-size: 125px;
   font-weight: 100;
   position: absolute;
-  top: -6%;
+  top: -8%;
   left: 3%;
+  text-shadow: 1px 1px 4px hotpink, 1px 1px 2px black, 0 0 25px mediumpurple, 0 0 12px plum;
+
 }
 
 h1 {
@@ -43,9 +46,10 @@ h1 {
   margin: auto;
   padding: 50px;
   position: absolute;
-  top: 20%;
+  top: 23%;
   left: 25%;
-  border: solid silver;
+  border: solid 10px silver;
+  border-style: inset;
   height: 40vh;
   width: 40vw;
   text-align: center;
@@ -55,23 +59,28 @@ h1 {
 .category {
   font-family: 'category-font';
   text-shadow: 2px 2px black;
+  font-size: 33px;
+}
+
+.clue {
+  font-size: 20px;
 }
 
 .countdown {
   position: absolute;
-  right: 3%;
-  top: 3%;
+  right: 5%;
+  top: 5%;
   color: rgb(28, 28, 211);
-  font-size: 35px;
+  font-size: 45px;
   font-weight: bolder;
 }
 
 .panic {
   position: absolute;
-  right: 3%;
-  top: 3%;
+  right: 5%;
+  top: 5%;
   color: crimson;
-  font-size: 35px;
+  font-size: 45px;
   font-weight: bolder;
 }
 

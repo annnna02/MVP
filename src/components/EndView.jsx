@@ -32,7 +32,6 @@ class EndView extends React.Component {
       score: this.state.score,
     })
     .then(() => {
-      console.log('Posted :)');
       const roll = anime({
         targets: '.ending-modal',
         translateX: 10000,

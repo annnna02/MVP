@@ -130,7 +130,7 @@ class Trivia extends React.Component {
         />
         <div className="trivia-main">
           <h2 className="category">{this.state.category.toUpperCase()}</h2>
-          <h3>Q: {this.state.current.question}</h3>
+          <h3 className="clue">Q: {this.state.current.question}</h3>
           <select className="dropdown" value={this.state.dropdown} onChange={this.handleDropdownChange}>
             <option default>Change me!</option>
             <option value="object">What is</option>
