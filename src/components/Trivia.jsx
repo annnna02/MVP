@@ -136,13 +136,14 @@ class Trivia extends React.Component {
             <option value="object">What is</option>
             <option value="person">Who is</option>
           </select>
-          <form className="answer-bar" onSubmit={this.handleSubmit}>
+          <form className="answer-form" onSubmit={this.handleSubmit}>
             <input
+              className="answer-bar"
               type="text"
               value={this.state.value}
               onChange={this.handleChange}
             />
-            <input type="submit" value="Guess!"/>
+            <input className="submit-guess" type="submit" value="Guess!"/>
           </form>
         </div>
       </>

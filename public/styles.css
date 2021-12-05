@@ -32,7 +32,7 @@ body {
   position: absolute;
   top: -8%;
   left: 3%;
-  text-shadow: 1px 1px 4px hotpink, 1px 1px 2px black, 0 0 25px mediumpurple, 0 0 12px plum;
+  text-shadow: 1px 1px 4px hotpink, 2px 2px 2px black, 0 0 25px mediumpurple, 0 0 12px plum;
 
 }
 
@@ -58,7 +58,7 @@ h1 {
 
 .category {
   font-family: 'category-font';
-  text-shadow: 2px 2px black;
+  text-shadow: 3px 3px black;
   font-size: 33px;
 }
 
@@ -85,26 +85,41 @@ h1 {
 }
 
 .answer-form {
-  position: relative;
-  bottom: -30%;
-  left: 15%;
-  height: 15%;
-  width: 30%;
+  position: absolute;
+  bottom: 21.2%;
+  left: 37%;
+  height: 8%;
+  width: 45%;
+  justify-content: center;
 }
 
 .answer-bar {
-  /* position: relative;
-  bottom: -27%; */
+  position: relative;
+  padding-left: 3%;
   height: 100%;
   width: 100%;
+  font-family: 'Chalkduster';
+  font-size: smaller;
+  background-color: ghostwhite;
 }
 
 .dropdown {
-  position: relative;
-  bottom: -24%;
-  height: 12%;
-  width: 35%;
+  position: absolute;
+  bottom: 20%;
+  left: 17%;
+  height: 9%;
+  width: 20%;
   text-align: center;
+  background-color: ghostwhite;
+}
+
+.submit-guess {
+  position: absolute;
+  height: 100%;
+  width: 40%;
+  bottom: -122%;
+  left: 15%;
+  background-color: ghostwhite;
 }
 
 /* ---------------------------------------------------------
