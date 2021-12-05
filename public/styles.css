@@ -66,6 +66,15 @@ h1 {
   font-weight: bolder;
 }
 
+.panic {
+  position: absolute;
+  right: 3%;
+  top: 3%;
+  color: crimson;
+  font-size: 35px;
+  font-weight: bolder;
+}
+
 .answer-form {
   position: relative;
   bottom: -30%;

@@ -64,10 +64,9 @@ class Trivia extends React.Component {
         scale: [{value: 1}, {value: 1.4}, {value: 1, delay: 250}],
         rotateY: {value: '+=360', delay: 200},
         easing: 'easeInOutSine',
-        duration: 550,
+        duration: 525,
       });
     } else {
-      // TODO: create buzz/shake animation for textbox when incorrect, THEN
       const xMax = 16;
       const shake = anime({
         targets: '.trivia-main',
@@ -110,7 +109,14 @@ class Trivia extends React.Component {
     if (completed) {
       return <></>;
     } else {
-      return <span className="countdown">0:{seconds}</span>;
+      const timesup = anime({
+        targets: '.panic',
+        translateX: ['-.25rem', '.25rem'],
+        duration: 40,
+        direction: 'alternate',
+        loop: true,
+      });
+      return <div className={seconds <= 5 ? "panic" : "countdown"}>0:{seconds}</div>;
     }
   }
 
