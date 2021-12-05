@@ -124,14 +124,14 @@ h1 {
   text-align: center;
 }
 
-.result-tile {
+.correct-tile {
   background-color: honeydew;
   border: black solid;
   border-style: inset;
   padding: 6%;
 }
 
-.incorrect {
+.incorrect-tile {
   background-color: crimson;
   border: black solid;
   border-style: inset;

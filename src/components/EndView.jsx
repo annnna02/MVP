@@ -44,9 +44,12 @@ class EndView extends React.Component {
         <div className="ending-modal modal-blur">
           <div className="rundown-list">
             <h2>Your Results!</h2>
-            {this.state.rundown.map(entry => {
+            {this.state.rundown.map((entry, i) => {
               return (
-                <div className="result-tile">
+                <div className={
+                  i + 1 === this.state.rundown.length
+                  ? "incorrect-tile"
+                  : "correct-tile"}>
                   <div>Category: {entry.category.toUpperCase()}</div>
                   <div>Q: {entry.question}</div>
                   <div>A: {entry.answer}</div>
