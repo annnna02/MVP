@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import axios from 'axios';
+import anime from 'animejs';
 
 class EndView extends React.Component {
   constructor(props) {
@@ -31,7 +32,15 @@ class EndView extends React.Component {
       score: this.state.score,
     })
     .then(() => {
-      console.log('Posted :)')
+      console.log('Posted :)');
+      const roll = anime({
+        targets: '.ending-modal',
+        translateX: 10000,
+        delay: 400,
+        easing: 'easeInOutSine',
+        rotate: '5turn',
+        duration: 1500,
+      });
     })
     .catch(err => {
       console.log(err);
