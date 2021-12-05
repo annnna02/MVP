@@ -10,15 +10,27 @@
   src: url('./fonts/HelveticaInseratLTStd-Roman.ttf');
 }
 
+@font-face {
+  font-family: 'clue-card-font';
+  src: url('./fonts/ITC-Korinna-Regular.ttf');
+}
+
 body {
-  font-family: 'garamond';
+  /* font-family: 'garamond'; */
+  font-family: 'clue-card-font';
   font-style: normal;
   color: ghostwhite;
+  background-color: wheat;
 }
 
 .logo {
   font-family: 'gyparodyregular';
   color: silver;
+  font-size: 100px;
+  font-weight: 100;
+  position: absolute;
+  top: -6%;
+  left: 3%;
 }
 
 h1 {
@@ -26,11 +38,14 @@ h1 {
 }
 
 .trivia-main {
-  background-color: rgb(28, 28, 211);
+  /* background-color: rgb(28, 28, 211); */
+  background-color: navy; /* teal, navy look good too */
   margin: auto;
   padding: 50px;
-  transform: translate(0, 10vh);
-  border: solid black;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  border: solid silver;
   height: 40vh;
   width: 40vw;
   text-align: center;
@@ -51,15 +66,32 @@ h1 {
   font-weight: bolder;
 }
 
-.answer-bar {
+.answer-form {
   position: relative;
-  bottom: -27%;
+  bottom: -30%;
+  left: 15%;
+  height: 15%;
+  width: 30%;
+}
+
+.answer-bar {
+  /* position: relative;
+  bottom: -27%; */
+  height: 100%;
+  width: 100%;
 }
 
 .dropdown {
   position: relative;
   bottom: -24%;
+  height: 12%;
+  width: 35%;
+  text-align: center;
 }
+
+/* ---------------------------------------------------------
+                       ENDING PAGE!!!
+-----------------------------------------------------------*/
 
 .modal-bg {
   width:100%;
@@ -99,6 +131,13 @@ h1 {
   padding: 6%;
 }
 
+.incorrect {
+  background-color: crimson;
+  border: black solid;
+  border-style: inset;
+  padding: 6%;
+}
+
 .grand-total {
   font-weight: bold;
   font-size:large;
@@ -108,3 +147,4 @@ h1 {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+
