@@ -15,7 +15,13 @@
   src: url('./fonts/ITC-Korinna-Regular.ttf');
 }
 
-.blinkOff {
+.lights-L {
+  width: 20px;
+  position: absolute;
+  left: 2%;
+}
+
+.blinkOffL {
   animation: blink1 1.5s steps(1, end) infinite;
   font-size: large;
 }
@@ -32,10 +38,9 @@
   }
 }
 
-.blinkOn {
+.blinkOnL {
   animation: blink2 1.5s steps(1, end) infinite;
   font-size: large;
-
 }
 
 @keyframes blink2 {
@@ -48,6 +53,27 @@
   100% {
     opacity: 0;
   }
+}
+
+
+.lights-R {
+  width: 20px;
+  position: absolute;
+  right: 3.5%;
+  top: -10%;
+}
+
+
+.blinkOffR {
+  transform: translate(98%, 200%);
+  animation: blink1 1.5s steps(1, end) infinite;
+  font-size: large;
+}
+
+.blinkOnR {
+  transform: translate(98%, 200%);
+  animation: blink2 1.5s steps(1, end) infinite;
+  font-size: large;
 }
 
 /* ---------------------------------------------------------
@@ -76,7 +102,7 @@ input {
   font-weight: 100;
   position: absolute;
   top: -8%;
-  left: 3%;
+  left: 7%;
   text-shadow: 1px 1px 4px hotpink, 2px 2px 2px black, 0 0 25px mediumpurple, 0 0 12px plum;
 
 }
@@ -110,14 +136,14 @@ h1 {
 .clue {
   font-size: 20px;
   overflow-y: scroll;
-  height: 40%;
+  height: 30%;
   width: auto;
 }
 
 .countdown {
   position: absolute;
-  right: 5%;
-  top: 5%;
+  right: 8%;
+  top: 6%;
   color: rgb(28, 28, 211);
   font-size: 45px;
   font-weight: bolder;

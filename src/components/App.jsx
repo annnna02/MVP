@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import Border from './Border.jsx';
+import BorderL from './BorderL.jsx';
+import BorderR from './BorderR.jsx';
 import Header from './Header.jsx';
 import Trivia from './Trivia.jsx';
 import EndView from './EndView.jsx';
@@ -63,8 +64,7 @@ class App extends React.Component {
   render() {
     return (
       <div id="main">
-        <Border className="left"/>
-        <Border className="right"/>
+        <BorderL /><BorderR />
         <Header />
         <Trivia
           current={this.state.current}

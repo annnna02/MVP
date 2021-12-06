@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Border = () => {
+const BorderL = (props) => {
   const lightsOn = ['🔵', '🟡', '🟠', '🟣', '🟢', '⚪️', '🔵', '🟡', '🟠', '🟣', '🟢', '⚪️', '🔵', '🟡', '🟠', '🟣', '🟢', '⚪️', '🔵', '🟡', '🟠', '🟣', '🟢', '⚪️', '🔵', '🟡', '🟠', '🟣', '🟢', '⚪️'];
   return (
-    <div>
+    <div className="lights-L">
       {lightsOn.map((light, i) => {
-        return <div className={i % 2 === 0? "blinkOff" : "blinkOn"}>{light}</div>;
+        return <div className={i % 2 === 0 ? "blinkOffL" : "blinkOnL"}>{light}</div>;
       })}
     </div>
   );
 }
 
-export default Border;
+export default BorderL;
