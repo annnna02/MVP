@@ -15,6 +15,45 @@
   src: url('./fonts/ITC-Korinna-Regular.ttf');
 }
 
+.blinkOff {
+  animation: blink1 1.5s steps(1, end) infinite;
+  font-size: large;
+}
+
+@keyframes blink1 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blinkOn {
+  animation: blink2 1.5s steps(1, end) infinite;
+  font-size: large;
+
+}
+
+@keyframes blink2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ---------------------------------------------------------
+                       MAIN PAGE!!!
+-----------------------------------------------------------*/
+
 body {
   /* font-family: 'garamond'; */
   font-family: 'clue-card-font';
@@ -70,6 +109,9 @@ h1 {
 
 .clue {
   font-size: 20px;
+  overflow-y: scroll;
+  height: 40%;
+  width: auto;
 }
 
 .countdown {
@@ -185,8 +227,10 @@ h1 {
 }
 
 .correct-tile {
-  background-color: rgb(108, 238, 68);
+  background-color: rgb(120, 223, 89);
+  opacity: 0.8;
   border-top: black solid 0.5px;
+  border-bottom: black solid 0.3px;
   padding: 5%;
   text-align: left;
   font-size: 1.3vw;
@@ -196,15 +240,17 @@ h1 {
   background-color: crimson;
   opacity: 0.8;
   border-top: black solid 0.5px;
+  border-bottom: black solid 0.3px;
   padding: 5%;
   text-align: left;
   font-size: 1.3vw;
 }
 
 .ending-category {
+  text-shadow: 1px 1px 1px black;
   font-weight: bold;
   font-size: larger;
-  margin-bottom: 1%;
+  margin-bottom: 1.2%;
   color: seashell;
 }
 
