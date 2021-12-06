@@ -14,6 +14,7 @@ app.use(morgan('tiny'));
 app.get('/api', (req, res) => {
   axios.get('http://jservice.io/api/random')
     .then(response => {
+      console.log(response.data[0].answer);
       res.json(response.data);
     })
     .catch(err => {

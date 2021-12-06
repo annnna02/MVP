@@ -56,7 +56,7 @@ class Trivia extends React.Component {
 
   handleSubmit(e) {
     event.preventDefault();
-    if (this.isValid(this.state.value)) {
+    if (this.isValid(this.state.value) && this.state.dropdown) {
       this.props.updateScore(this.state.current.value);
       this.props.getRandomQ();
       anime({
@@ -91,18 +91,14 @@ class Trivia extends React.Component {
         ],
         autoplay: true,
       });
-      const send = () => {
-        shake.restart();
-      };
-      setTimeout(() => this.props.changeView('end'), 700);
+      setTimeout(() => this.props.changeView('end'), 725);
     }
   }
 
   isValid(answer) {
-    // if (!this.state.dropdown) {
-    //   this.props.changeView('end');
-    // }
-    // return answer.toLowerCase() === this.state.current.answer.toLowerCase();
+    if (!this.state.dropdown) {
+      return false;
+    }
     if (answer === '') {
       return false;
     }
@@ -131,7 +127,7 @@ class Trivia extends React.Component {
         <Countdown
           date={Date.now() + 30000}
           renderer={this.renderer}
-          // onComplete={() => this.props.changeView('end')}
+          onComplete={() => this.props.changeView('end')}
         />
         <div className="trivia-main">
           <h2 className="category">{this.state.category.toUpperCase()}</h2>
